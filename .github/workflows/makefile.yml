@@ -7,14 +7,14 @@ on:
 
 jobs:
   build:
-    name: Build KernelSU Next
+    name: Build KernelSUNext
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Setup build kernel environment
       run: |
         sudo apt update
-        sudo apt install libc6-dev clang flex bison libssl-dev bc python3 python2 zip unzip git lld llvm
+        sudo apt install libc6-dev clang flex bison libssl-dev bc python-is-python3 zip unzip git lld llvm
         mkdir -p $GITHUB_WORKSPACE/kernel_workspace
         
     - name: Download Proton-clang
@@ -28,7 +28,7 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://github.com/GurbanA/kernel_xiaomi_lisa.git --depth=1
         
-    - name: Integrate KernelSU
+    - name: Integrate KernelSUNext
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/kernel_xiaomi_lisa
         rm -rf KernelSU-Next/
