@@ -31,7 +31,7 @@ jobs:
     - name: Integrate KernelSU
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/kernel_xiaomi_lisa
-        rm -rf KernelSU/
+        rm -rf KernelSU-Next/
         curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -
         
     - name: Compiling Kernel
